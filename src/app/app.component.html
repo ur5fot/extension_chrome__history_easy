@@ -1,5 +1,5 @@
 <ul class="list">
-  <li *ngFor="let historyItem of structuredByDomain "><a [href]="historyItem.items[0].url" target="_blank">{{ historyItem.url }} - {{ historyItem.items[0].title }}</a></li>
+  <li *ngFor="let historyItem of structuredByDomain "><a [href]="historyItem.items[0].url" target="_blank"><b>{{ historyItem.url }}</b> - {{ historyItem.items[0].title }}</a></li>
 </ul>
-  <button (click)="test = 2" >{{ test }}</button>
+  <button id="button" (click)="test = 2" >{{ test }}</button>
 

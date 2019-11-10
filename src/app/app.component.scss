@@ -1,3 +1,15 @@
 .list {
   width: 400px;
+
+  li {
+    margin-top: 5px;
+    line-height: 1.2;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+button {
+  width: 100%;
+  display: block;
 }
