@@ -24,13 +24,14 @@
             "tsConfig": "tsconfig.app.json",
             "aot": false,
             "assets": [
+              "src/manifest.json",
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [{ "input": "src/background.ts", "inject": false, "bundleName": "background" }]
           },
           "configurations": {
             "production": {
@@ -42,7 +43,7 @@
               ],
               "optimization": true,
               "outputHashing": "all",
-              "sourceMap": false,
+              "sourceMap": true,
               "extractCss": true,
               "namedChunks": false,
               "aot": true,

@@ -1,0 +1,26 @@
+{
+  "name": "Bookmarks systematization",
+  "version": "1.0",
+  "manifest_version": 2,
+  "permissions": ["storage", "history", "bookmarks"],
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [{
+    "js": [
+      "runtime.js",
+      "polyfills.js",
+      "styles.js",
+      "vendor.js",
+      "main.js"
+    ],
+    "matches": ["http://*/*", "https://*/*"]
+  }],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
+
+
