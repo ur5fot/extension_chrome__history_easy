@@ -31,18 +31,19 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     window.onload = () => {
-      setTimeout(()=> {
+
+      setTimeout(() => {
         chrome.history.search({text: '', maxResults: 1000}, (history) => {
           this.history = history;
           this.structuredByDomain = this.structuredStories(history);
 
         });
-        setTimeout(()=> document.documentElement.querySelector('button').click(), 10);
+
+        setTimeout(() => document.documentElement.querySelector('button').click(), 10);
+
       }, 10);
 
     };
-
-
 
 
     //

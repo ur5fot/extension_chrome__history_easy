@@ -1,11 +1,27 @@
 .list {
-  width: 400px;
+  width: 600px;
+
+  ul {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
 
   li {
     margin-top: 5px;
     line-height: 1.2;
+    list-style-image: none;
+    list-style-type: none;
+
     a {
       text-decoration: none;
+    }
+    img {
+      height: 12px;
+      width: 12px;
+      vertical-align: center;
+      margin-right: 10px;
     }
   }
 }
