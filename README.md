@@ -1,4 +1,6 @@
-# Extchrombookmarks
+# Extensions chrome "Simple history"
+
+This is a simple Chrome browser extension. This extension shows browser history by grouping by domain name.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.18.
 
