@@ -36,12 +36,12 @@ export class AppComponent implements OnInit {
         chrome.history.search({text: '', maxResults: 1000}, (history) => {
           this.history = history;
           this.structuredByDomain = this.structuredStories(history);
-
+          setTimeout(() => document.documentElement.querySelector('button').click(), 20);
         });
 
-        setTimeout(() => document.documentElement.querySelector('button').click(), 10);
 
-      }, 10);
+
+      }, 20);
 
     };
 

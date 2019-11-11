@@ -1,31 +1,33 @@
 .list {
-  width: 600px;
+  width: 500px;
 
-  ul {
-    list-style-image: none;
-    list-style-type: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  padding-inline-start: 0;
 
-  li {
-    margin-top: 5px;
+  &__item {
+    margin-top: 10px;
     line-height: 1.2;
     list-style-image: none;
     list-style-type: none;
+    padding-left: 25px;
+    position: relative;
+  }
+  &__link {
+    text-decoration: none;
+  }
 
-    a {
-      text-decoration: none;
-    }
-    img {
-      height: 12px;
-      width: 12px;
-      vertical-align: center;
-      margin-right: 10px;
-    }
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: auto;
+
   }
 }
-button {
-  width: 100%;
-  display: block;
+
+.refresh-btn {
+  display: none;
 }

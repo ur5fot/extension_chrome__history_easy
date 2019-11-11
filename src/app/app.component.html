@@ -1,10 +1,11 @@
 <ul class="list">
-  <li *ngFor="let historyItem of structuredByDomain " >
-    <a [href]="historyItem.items[0].url" target="_blank">
-      <img  [src]="'https://' + historyItem.url + '/favicon.ico'" alt="">
+  <li class="list__item" *ngFor="let historyItem of structuredByDomain ">
+    <a  class="list__link" [href]="historyItem.items[0].url" target="_blank">
+      <img class="list__icon" [src]="'https://' + historyItem.url + '/favicon.ico'" (error)="$event.target.src='assets/browser16.png'" alt="">
       <b>{{ historyItem.url }}</b> - {{ historyItem.items[0].title }}
     </a>
   </li>
 </ul>
-  <button id="button" (click)="test = 2" >{{ test }}</button>
+
+<button class="refresh-btn" (click)="test = 2">{{ test }}</button>
 
