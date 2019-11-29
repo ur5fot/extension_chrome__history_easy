@@ -30,22 +30,16 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    window.onload = () => {
+    let now = Date.now();
+    let startTime = now - 21 * 24 * 60 * 60 * 10000;
 
-      setTimeout(() => {
-        chrome.history.search({text: '', maxResults: 1000}, (history) => {
-          this.history = history;
-          this.structuredByDomain = this.structuredStories(history);
-          setTimeout(() => document.documentElement.querySelector('button').click(), 20);
-        });
+    setTimeout(() => {
+      chrome.history.search({text: '', startTime,  maxResults: 10000}, (history) => {
+        this.history = history;
+        this.structuredByDomain = this.structuredStories(history);
+        setTimeout(() => document.documentElement.querySelector('button').click(), 20);
+      });
+    }, 20);
 
-
-
-      }, 20);
-
-    };
-
-
-    //
-  }
+  };
 }
