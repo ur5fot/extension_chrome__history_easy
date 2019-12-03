@@ -1,6 +1,12 @@
+@import "~css-reset-and-normalize";
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
 .list {
   width: 500px;
-
   list-style-image: none;
   list-style-type: none;
   margin-left: 0;
@@ -15,7 +21,7 @@
     position: relative;
   }
   &__link {
-    text-decoration: none;
+
   }
 
   &__icon {
@@ -25,6 +31,16 @@
     width: 16px;
     height: auto;
 
+  }
+}
+
+.sub-list {
+  padding-left: 8px;
+  max-height: 100px;
+  overflow: hidden;
+  overflow-y: auto;
+  .sub-list__item {
+    margin-top: 2px;
   }
 }
 
