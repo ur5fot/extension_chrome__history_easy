@@ -1,15 +1,24 @@
 <ul class="list">
-  <li class="list__item" *ngFor="let historyItem of structuredByDomain ">
-    <a class="list__link" [href]="historyItem.items[0].url" [title]="historyItem.items[0].url" target="_blank">
-      <img class="list__icon" [src]="'https://' + historyItem.url + '/favicon.ico'" (error)="$event.target.src='assets/browser16.png'" alt="">
-      <b>{{ historyItem.url }}</b> - {{ historyItem.items[0].title }}
-    </a>
-    <ul class="sub-list" *ngIf="historyItem.items.length > 1">
-      <li class="sub-list__item" *ngFor="let historyURLItem of historyItem.items "><a class="sub-list__link" [title]="historyURLItem.url" [href]="historyURLItem.url" target="_blank">
-        {{ historyURLItem.title }}
-      </a></li>
-    </ul>
+  <li class="list__item" *ngFor="let historyItem of structuredByDomain; index as i">
 
+    <img (click)="historyItem.show =  !historyItem.show" class="list__icon"  [src]="'https://' + historyItem.url + '/favicon.ico'" (error)="$event.target.src='assets/browser16.png'" alt="">
+    <img class="list__icon-open" *ngIf="historyItem.items.length > 1"  src="./assets/down-arrow16.png" alt="">
+    <img class="list__icon-open" *ngIf="historyItem.items.length == 1"  src="./assets/hide16.png" alt="">
+
+    <a class="list__link" [href]="historyItem.items[0].url" [title]="historyItem.items[0].url" target="_blank">
+       <b>{{ historyItem.url }}</b> <span *ngIf="historyItem.items.length > 1" > ({{historyItem.items.length - 1}})</span> - {{ historyItem.items[0].title }}
+    </a>
+
+    <ul class="sub-list" *ngIf="historyItem.items.length > 1 && historyItem.show" >
+      <ng-container *ngFor="let historyURLItem of historyItem.items; index as j">
+        <li class="sub-list__item" *ngIf="j !== 0">
+          <a class="sub-list__link" [title]="historyURLItem.url" [href]="historyURLItem.url" target="_blank">
+            - {{ historyURLItem.title }}
+          </a>
+        </li>
+      </ng-container>
+
+    </ul>
   </li>
 </ul>
 

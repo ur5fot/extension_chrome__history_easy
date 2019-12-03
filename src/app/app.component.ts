@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
       let historyIndexOf = _.findIndex(structuredByDomain, {url});
 
       if (historyIndexOf < 0) {
-        structuredByDomain.push({url, items: [historyItem]});
+        structuredByDomain.push({url, show: false, items: [historyItem]});
       } else {
         structuredByDomain[historyIndexOf].items.push(historyItem);
       }
@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     let now = Date.now();
-    let startTime = now - 14 * 24 * 60 * 60 * 10000;
+    let startTime = now - 21 * 24 * 60 * 60 * 2000;
 
     setTimeout(() => {
       chrome.history.search({text: '', startTime,  maxResults: 10000}, (history) => {
