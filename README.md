@@ -1,5 +1,7 @@
 # Extensions chrome "Simple history"
 
+install go to https://chrome.google.com/webstore/detail/simple-history/dhlgecanmlhjomnlmgcohllcilejlknl?hl=en-US
+
 This is a simple Chrome browser extension. This extension shows browser history by grouping by domain name.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.18.
